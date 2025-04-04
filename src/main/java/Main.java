@@ -3,53 +3,55 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Main {
-  public static void main(String[] args) {
-    if (args.length < 2) {
-      System.err.println("Usage: ./your_program.sh tokenize <filename>");
-      System.exit(1);
+    public static void main(String[] args) {
+        if (args.length < 2) {
+            System.err.println("Usage: ./your_program.sh tokenize <filename>");
+            System.exit(1);
+        }
+        char a = '1';
+        String command = args[0];
+        String filename = args[1];
+
+        if (!command.equals("tokenize")) {
+            System.err.println("Unknown command: " + command);
+            System.exit(1);
+        }
+
+        String fileContents = "";
+        try {
+            fileContents = Files.readString(Path.of(filename));
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+            System.exit(1);
+        }
+
+        if (!fileContents.isEmpty()) {
+            for (int idx = 0; idx < fileContents.length(); idx++) {
+
+                char c = fileContents.charAt(idx);
+
+                if (c == '(') {
+                    System.out.println("LEFT_PAREN ( null");
+                } else if (c == ')') {
+                    System.out.println("RIGHT_PAREN ) null");
+                } else if (c == '{') {
+                    System.out.println("LEFT_BRACE { null");
+                } else if (c == '}') {
+                    System.out.println("RIGHT_BRACE } null");
+                }
+
+                else if (c == '.') {
+                    System.out.println("DOT . null");
+                } else if (c == ',') {
+                    System.out.println("COMMA , null");
+                } else if (c == '+') {
+                    System.out.println("PLUS + null");
+                } else if (c == '*') {
+                    System.out.println("STAR * null");
+                }
+            }
+
+        }
+        System.out.println("EOF  null");
     }
-    char a = '1';
-    String command = args[0];
-    String filename = args[1];
-
-    if (!command.equals("tokenize")) {
-      System.err.println("Unknown command: " + command);
-      System.exit(1);
-    }
-
-    String fileContents = "";
-    try {
-      fileContents = Files.readString(Path.of(filename));
-    } catch (IOException e) {
-      System.err.println("Error reading file: " + e.getMessage());
-      System.exit(1);
-    }
-
-     if (!fileContents.isEmpty()) {
-       for (int idx = 0; idx < fileContents.length(); idx++) {
-
-         char c = fileContents.charAt(idx);
-
-         if (c == '(') {
-
-           System.out.println("LEFT_PAREN ( null");
-
-         } else if (c == ')') {
-
-           System.out.println("RIGHT_PAREN ) null");
-
-         } else if(c == '{') {
-           System.out.println("LEFT_BRACE { null");
-
-
-
-         }else if(c == '}') {
-         System.out.println("RIGHT_BRACE } null");
-     }
-
-       }
-
-     }
-    System.out.println("EOF  null");
-  }
 }
