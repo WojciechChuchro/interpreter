@@ -3,15 +3,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Main {
-    private int line = 1;
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner();
         if (args.length < 2) {
             System.err.println("Usage: ./your_program.sh tokenize <filename>");
             System.exit(1);
         }
-        char a = '1';
         String command = args[0];
         String filename = args[1];
 
@@ -34,8 +31,10 @@ public class Main {
                 char c = fileContents.charAt(idx);
                 scanner.scanToken(c);
             }
-
         }
         System.out.println("EOF  null");
+        if (Scanner.hasError) {
+            System.exit(65);
+        }
     }
 }

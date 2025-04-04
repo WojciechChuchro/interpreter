@@ -1,5 +1,6 @@
 public class Scanner {
     private int line = 1;
+    public static boolean hasError = false;
 
     public void scanToken(char c) {
         switch (c) {
@@ -34,7 +35,8 @@ public class Scanner {
                 System.out.println("STAR * null");
                 break;
             default:
-                System.out.println("[line "+line+"] Error: Unexpected character: " + c);
+                System.err.printf("[line %d] Error: Unexpected character: %s\n", line, c);
+                hasError = true;
                 break;
         }
     }
