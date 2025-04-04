@@ -8,7 +8,7 @@ public class Main {
       System.err.println("Usage: ./your_program.sh tokenize <filename>");
       System.exit(1);
     }
-
+    char a = '1';
     String command = args[0];
     String filename = args[1];
 
@@ -26,9 +26,23 @@ public class Main {
     }
 
      if (!fileContents.isEmpty()) {
-       throw new RuntimeException("Scanner not implemented");
-     } else {
-       System.out.println("EOF  null"); // Placeholder, remove this line when implementing the scanner
+       for (int idx = 0; idx < fileContents.length(); idx++) {
+
+         char c = fileContents.charAt(idx);
+
+         if (c == '(') {
+
+           System.out.println("LEFT_PAREN ( null");
+
+         } else if (c == ')') {
+
+           System.out.println("RIGHT_PAREN ) null");
+
+         }
+
+       }
+
      }
+    System.out.println("EOF  null");
   }
 }
