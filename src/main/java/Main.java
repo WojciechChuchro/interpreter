@@ -37,7 +37,7 @@ public class Main {
                 System.out.println("STAR * null");
                 break;
             default:
-                System.out.println("Unexpected character: " + c);
+                System.out.println("[line 1] Error: Unexpected character:" + c);
                 break;
         }
     }
