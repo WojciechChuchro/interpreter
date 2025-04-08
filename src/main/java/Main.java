@@ -30,7 +30,7 @@ public class Main {
 
                 char c = fileContents.charAt(idx);
                 if (c == '=' && idx + 1 < fileContents.length() && fileContents.charAt(idx + 1) == '=') {
-                    System.out.println("EQUAL_EQUAL = null");
+                    System.out.println("EQUAL_EQUAL == null");
                     idx++;
                 } else {
                     scanner.scanToken(c);
