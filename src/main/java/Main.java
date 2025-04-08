@@ -96,6 +96,11 @@ public class Main {
                                     System.out.println("EQUAL_EQUAL == null");
                                     idx++;
                                     break;
+                                default:
+                                    System.err.println("[line " + line + "] Error: Unexpected character: " + c);
+                                    hasError = true;
+                                    break;
+
                             }
                         } else {
                             System.out.println("EQUAL = null");
