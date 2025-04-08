@@ -69,7 +69,6 @@ public class Main {
                         System.out.println("STAR * null");
                         break;
                     case '!':
-                        System.out.println(idx + 1 < fileContents.length() - 1);
                         if (idx + 1 < fileContents.length() - 1) {
                             char next = fileContents.charAt(idx + 1);
                             switch (next) {
