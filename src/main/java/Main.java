@@ -76,7 +76,6 @@ public class Main {
                                     idx++;
                                     break;
                                 default:
-
                                     System.out.println("BANG ! null");
                                     break;
                             }
@@ -93,6 +92,9 @@ public class Main {
                                 case '=':
                                     System.out.println("EQUAL_EQUAL == null");
                                     idx++;
+                                    break;
+                                default:
+                                    System.out.println("EQUAL = null");
                                     break;
                             }
                         } else {
