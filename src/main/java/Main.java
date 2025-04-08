@@ -77,16 +77,16 @@ public class Main {
                                     idx++;
                                     break;
                                 default:
-                                    System.err.println("[line " + line + "] Error: Unexpected character: " + c);
-                                    hasError = true;
+
+                                    System.out.println("BANG ! null");
                                     break;
                             }
                         } else {
-                            System.err.println("[line " + line + "] Error: Unexpected character: " + c);
-                            hasError = true;
+
+                            System.out.println("BANG ! null");
                             break;
                         }
-                        break;
+
                     case '=':
                         if (idx + 1 < fileContents.length()) {
                             char next = fileContents.charAt(idx + 1);
