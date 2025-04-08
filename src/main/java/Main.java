@@ -86,6 +86,7 @@ public class Main {
                             hasError = true;
                             break;
                         }
+                        break;
                     case '=':
                         if (idx + 1 < fileContents.length()) {
                             char next = fileContents.charAt(idx + 1);
@@ -104,7 +105,6 @@ public class Main {
                         hasError = true;
                         break;
                 }
-
             }
         }
         System.out.println("EOF  null");
