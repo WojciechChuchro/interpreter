@@ -68,20 +68,35 @@ public class Main {
                     case '*':
                         System.out.println("STAR * null");
                         break;
+                    case '!':
+                        System.out.println(idx + 1 < fileContents.length() - 1);
+                        if (idx + 1 < fileContents.length() - 1) {
+                            char next = fileContents.charAt(idx + 1);
+                            switch (next) {
+                                case '=':
+                                    System.out.println("BANG_EQUAL != null");
+                                    idx++;
+                                    break;
+                                default:
+                                    System.err.println("[line " + line + "] Error: Unexpected character: " + c);
+                                    hasError = true;
+                                    break;
+                            }
+                        } else {
+                            System.err.println("[line " + line + "] Error: Unexpected character: " + c);
+                            hasError = true;
+                            break;
+                        }
                     case '=':
                         if (idx + 1 < fileContents.length()) {
                             char next = fileContents.charAt(idx + 1);
                             switch (next) {
                                 case '=':
                                     System.out.println("EQUAL_EQUAL == null");
-                                    break;
-                                case '!':
-                                    System.out.println("BANG_EQUAL != null");
+                                    idx++;
                                     break;
                             }
-
                         } else {
-
                             System.out.println("EQUAL = null");
                         }
                         break;
