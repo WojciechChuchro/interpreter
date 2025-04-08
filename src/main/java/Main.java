@@ -101,6 +101,7 @@ public class Main {
                             System.out.println("EQUAL = null");
                             break;
                         }
+                        break;
                     default:
                         System.err.println("[line " + line + "] Error: Unexpected character: " + c);
                         hasError = true;
