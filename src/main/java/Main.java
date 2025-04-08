@@ -74,7 +74,7 @@ public class Main {
                             switch (next) {
                                 case '=':
                                     System.out.println("BANG_EQUAL != null");
-                                    idx++;
+                                    idx += 2;
                                     break;
                                 default:
 
