@@ -38,12 +38,7 @@ public class Scanner {
                 System.out.println("EQUAL = null");
                 break;
             default:
-<<<<<<< Updated upstream
-                System.err.printf("[line %d] Error: Unexpected character: %s\n", line, c);
-                hasError = true;
-=======
                 System.out.println("[line " + line + "] Error: Unexpected character: " + c);
->>>>>>> Stashed changes
                 break;
         }
     }
