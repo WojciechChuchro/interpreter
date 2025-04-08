@@ -83,7 +83,6 @@ public class Main {
                             }
                             break;
                         } else {
-
                             System.out.println("BANG ! null");
                             break;
                         }
@@ -96,16 +95,11 @@ public class Main {
                                     System.out.println("EQUAL_EQUAL == null");
                                     idx++;
                                     break;
-                                default:
-                                    System.err.println("[line " + line + "] Error: Unexpected character: " + c);
-                                    hasError = true;
-                                    break;
-
                             }
                         } else {
                             System.out.println("EQUAL = null");
+                            break;
                         }
-                        break;
                     default:
                         System.err.println("[line " + line + "] Error: Unexpected character: " + c);
                         hasError = true;
@@ -114,7 +108,7 @@ public class Main {
             }
         }
         System.out.println("EOF  null");
-        if (Scanner.hasError) {
+        if (hasError) {
             System.exit(65);
         }
     }
