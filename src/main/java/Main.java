@@ -6,7 +6,6 @@ public class Main {
     public static void main(String[] args) {
         int line = 1;
         boolean hasError = false;
-        Scanner scanner = new Scanner();
         if (args.length < 2) {
             System.err.println("Usage: ./your_program.sh tokenize <filename>");
             System.exit(1);
