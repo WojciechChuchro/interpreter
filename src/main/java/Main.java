@@ -81,6 +81,7 @@ public class Main {
                                     System.out.println("BANG ! null");
                                     break;
                             }
+                            break;
                         } else {
 
                             System.out.println("BANG ! null");
