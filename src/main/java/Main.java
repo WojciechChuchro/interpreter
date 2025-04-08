@@ -29,7 +29,12 @@ public class Main {
             for (int idx = 0; idx < fileContents.length(); idx++) {
 
                 char c = fileContents.charAt(idx);
-                scanner.scanToken(c);
+                if (c == '=' && idx + 1 < fileContents.length() && fileContents.charAt(idx + 1) == '=') {
+                    System.out.println("EQUAL_EQUAL = null");
+                    idx++;
+                } else {
+                    scanner.scanToken(c);
+                }
             }
         }
         System.out.println("EOF  null");

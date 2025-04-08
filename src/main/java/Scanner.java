@@ -39,6 +39,7 @@ public class Scanner {
                 break;
             default:
                 System.out.println("[line " + line + "] Error: Unexpected character: " + c);
+                hasError = true;
                 break;
         }
     }
